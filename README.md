@@ -15,7 +15,7 @@ This project contains automated tests for the Sauce Demo website using Cypress.
    ```
 2. Navigate to the project directory:
    ```bash
-   cd cypress-darbuka-tests
+   cd Assignment_QA_Cypress_Darbuka/
    ```
 3. Install dependencies:
    ```bash
