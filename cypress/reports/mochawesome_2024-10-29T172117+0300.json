@@ -1,0 +1,328 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 8,
+    "passes": 6,
+    "pending": 0,
+    "failures": 2,
+    "testsRegistered": 8,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-10-29T14:18:55.568Z",
+    "end": "2024-10-29T14:21:09.676Z",
+    "duration": 134108
+  },
+  "results": [
+    {
+      "uuid": "8475aa1a-ba0d-4cbd-a430-30a567938b16",
+      "title": "",
+      "fullFile": "cypress/e2e/edge-cases.cy.js",
+      "file": "cypress/e2e/edge-cases.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "44f5a4f7-4cdf-48fe-a015-be7ddfb5de4b",
+          "title": "Edge Cases and Form Validation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should validate required fields during checkout",
+              "fullTitle": "Edge Cases and Form Validation should validate required fields during checkout",
+              "timedOut": null,
+              "duration": 1862,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_InventoryPage.default.addToCart('Sauce Labs Backpack');\n_InventoryPage.default.goToCart();\n_CartPage.default.proceedToCheckout();\n// Try to continue without filling required fields\n_CheckoutPage.default.continue();\n_CheckoutPage.default.getErrorMessage().should('be.visible');\n// Fill only first name\n_CheckoutPage.default.fillShippingInfo('John', '', '');\n_CheckoutPage.default.continue();\n_CheckoutPage.default.getErrorMessage().should('be.visible');",
+              "err": {},
+              "uuid": "7217dea9-e1b5-4d59-b575-bc09b62102dd",
+              "parentUUID": "44f5a4f7-4cdf-48fe-a015-be7ddfb5de4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should handle sorting products",
+              "fullTitle": "Edge Cases and Form Validation should handle sorting products",
+              "timedOut": null,
+              "duration": 60250,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_InventoryPage.default.sortProducts('za');\ncy.get('.inventory_item_name').first().should('contain', 'Test.allTheThings()');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Edge Cases and Form Validation`",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Edge Cases and Form Validation`\n    at timedOutWaitingForPageLoad (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:130482:64)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:131467:16)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4186:41)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at LoginPage.visit (webpack://cypress-demo-tests/./cypress/support/pages/BasePage.js:7:7)\n    at Context.eval (webpack://cypress-demo-tests/./cypress/e2e/edge-cases.cy.js:8:14)",
+                "diff": null
+              },
+              "uuid": "c1a9f9d2-5470-491d-a846-d77c1d44e597",
+              "parentUUID": "44f5a4f7-4cdf-48fe-a015-be7ddfb5de4b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7217dea9-e1b5-4d59-b575-bc09b62102dd"
+          ],
+          "failures": [
+            "c1a9f9d2-5470-491d-a846-d77c1d44e597"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 62112,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "3cbf66e2-bc42-431c-a3d0-b01ab2ff719d",
+      "title": "",
+      "fullFile": "cypress/e2e/shopping-cart.cy.js",
+      "file": "cypress/e2e/shopping-cart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c546dfd5-5cc3-4199-aa65-d9553f65c92c",
+          "title": "Shopping Cart Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add items to cart",
+              "fullTitle": "Shopping Cart Tests should add items to cart",
+              "timedOut": null,
+              "duration": 1622,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_InventoryPage.default.addToCart('Sauce Labs Backpack');\n_InventoryPage.default.getCartCount().should('have.text', '1');\n_InventoryPage.default.addToCart('Sauce Labs Bike Light');\n_InventoryPage.default.getCartCount().should('have.text', '2');",
+              "err": {},
+              "uuid": "6c951b1f-5984-4b3d-983a-52aecd9b5203",
+              "parentUUID": "c546dfd5-5cc3-4199-aa65-d9553f65c92c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should complete checkout process",
+              "fullTitle": "Shopping Cart Tests should complete checkout process",
+              "timedOut": null,
+              "duration": 60231,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_InventoryPage.default.addToCart('Sauce Labs Backpack');\n_InventoryPage.default.goToCart();\n_CartPage.default.proceedToCheckout();\n_CheckoutPage.default.fillShippingInfo('John', 'Doe', '12345');\n_CheckoutPage.default.continue();\n_CheckoutPage.default.finish();\n_CheckoutPage.default.getOrderConfirmation().should('contain', 'Thank you');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Shopping Cart Tests`",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Shopping Cart Tests`\n    at timedOutWaitingForPageLoad (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:130482:64)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:131467:16)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4186:41)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at LoginPage.visit (webpack://cypress-demo-tests/./cypress/support/pages/BasePage.js:7:7)\n    at Context.eval (webpack://cypress-demo-tests/./cypress/e2e/shopping-cart.cy.js:8:14)",
+                "diff": null
+              },
+              "uuid": "d09283ee-c26c-4c03-a0dc-97e5eb84fb48",
+              "parentUUID": "c546dfd5-5cc3-4199-aa65-d9553f65c92c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6c951b1f-5984-4b3d-983a-52aecd9b5203"
+          ],
+          "failures": [
+            "d09283ee-c26c-4c03-a0dc-97e5eb84fb48"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 61853,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "dad2dd54-859b-4ecc-9e5b-6e284a787187",
+      "title": "",
+      "fullFile": "cypress/e2e/auth.cy.js",
+      "file": "cypress/e2e/auth.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8691b153-570f-4b6e-872b-9cee9c641ee6",
+          "title": "Authentication Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login successfully with valid credentials",
+              "fullTitle": "Authentication Tests should login successfully with valid credentials",
+              "timedOut": null,
+              "duration": 2716,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\ncy.url().should('include', '/inventory.html');",
+              "err": {},
+              "uuid": "aee999da-e0e3-48ab-96f0-b9e8c8674e12",
+              "parentUUID": "8691b153-570f-4b6e-872b-9cee9c641ee6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error with invalid credentials",
+              "fullTitle": "Authentication Tests should show error with invalid credentials",
+              "timedOut": null,
+              "duration": 840,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('invalid_user', 'wrong_password');\n_LoginPage.default.getErrorMessage().should('be.visible');",
+              "err": {},
+              "uuid": "9d278773-94cf-4966-afcd-8cf2b8b38a4e",
+              "parentUUID": "8691b153-570f-4b6e-872b-9cee9c641ee6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should logout successfully",
+              "fullTitle": "Authentication Tests should logout successfully",
+              "timedOut": null,
+              "duration": 1242,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n_InventoryPage.default.logout();\ncy.url().should('eq', `${Cypress.config().baseUrl}/`);",
+              "err": {},
+              "uuid": "af02930a-55a2-43be-882b-db8d0a17bc99",
+              "parentUUID": "8691b153-570f-4b6e-872b-9cee9c641ee6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should block locked out user",
+              "fullTitle": "Authentication Tests should block locked out user",
+              "timedOut": null,
+              "duration": 865,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('locked_out_user', 'secret_sauce');\n_LoginPage.default.getErrorMessage().should('contain', 'locked out');",
+              "err": {},
+              "uuid": "a59e4f7f-8dd3-47a5-8efe-78bc9295a2f3",
+              "parentUUID": "8691b153-570f-4b6e-872b-9cee9c641ee6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "aee999da-e0e3-48ab-96f0-b9e8c8674e12",
+            "9d278773-94cf-4966-afcd-8cf2b8b38a4e",
+            "af02930a-55a2-43be-882b-db8d0a17bc99",
+            "a59e4f7f-8dd3-47a5-8efe-78bc9295a2f3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5663,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

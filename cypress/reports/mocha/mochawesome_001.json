@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-10-29T14:19:03.280Z",
+    "end": "2024-10-29T14:20:05.536Z",
+    "duration": 62256,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8475aa1a-ba0d-4cbd-a430-30a567938b16",
+      "title": "",
+      "fullFile": "cypress/e2e/edge-cases.cy.js",
+      "file": "cypress/e2e/edge-cases.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "44f5a4f7-4cdf-48fe-a015-be7ddfb5de4b",
+          "title": "Edge Cases and Form Validation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should validate required fields during checkout",
+              "fullTitle": "Edge Cases and Form Validation should validate required fields during checkout",
+              "timedOut": null,
+              "duration": 1862,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_InventoryPage.default.addToCart('Sauce Labs Backpack');\n_InventoryPage.default.goToCart();\n_CartPage.default.proceedToCheckout();\n// Try to continue without filling required fields\n_CheckoutPage.default.continue();\n_CheckoutPage.default.getErrorMessage().should('be.visible');\n// Fill only first name\n_CheckoutPage.default.fillShippingInfo('John', '', '');\n_CheckoutPage.default.continue();\n_CheckoutPage.default.getErrorMessage().should('be.visible');",
+              "err": {},
+              "uuid": "7217dea9-e1b5-4d59-b575-bc09b62102dd",
+              "parentUUID": "44f5a4f7-4cdf-48fe-a015-be7ddfb5de4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should handle sorting products",
+              "fullTitle": "Edge Cases and Form Validation should handle sorting products",
+              "timedOut": null,
+              "duration": 60250,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_InventoryPage.default.sortProducts('za');\ncy.get('.inventory_item_name').first().should('contain', 'Test.allTheThings()');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Edge Cases and Form Validation`",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Edge Cases and Form Validation`\n    at timedOutWaitingForPageLoad (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:130482:64)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:131467:16)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4186:41)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at LoginPage.visit (webpack://cypress-demo-tests/./cypress/support/pages/BasePage.js:7:7)\n    at Context.eval (webpack://cypress-demo-tests/./cypress/e2e/edge-cases.cy.js:8:14)",
+                "diff": null
+              },
+              "uuid": "c1a9f9d2-5470-491d-a846-d77c1d44e597",
+              "parentUUID": "44f5a4f7-4cdf-48fe-a015-be7ddfb5de4b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7217dea9-e1b5-4d59-b575-bc09b62102dd"
+          ],
+          "failures": [
+            "c1a9f9d2-5470-491d-a846-d77c1d44e597"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 62112,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
