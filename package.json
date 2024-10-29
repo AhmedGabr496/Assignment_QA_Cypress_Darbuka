@@ -6,7 +6,7 @@
     "clean:reports": "rimraf cypress/reports/* || true",
     "cy:run": "cypress run",
     "generate:report": "node scripts/generateReport.js",
-    "test:with:report": "npm run clean:reports && npm run cy:run && npm run generate:report",
+    "test:with:report": "npm run clean:reports && npm run cy:run",
     "cy:open": "cypress open"
   },
   "devDependencies": {

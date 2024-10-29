@@ -21,7 +21,13 @@ async function generateReport() {
         reportPageTitle: 'Test Results',     // Browser tab title
         charts: true,                   // Include test result charts
         embeddedScreenshots: true,      // Include any test failure screenshots in the HTML
+        embedVideo: true,               // Embed videos
         inlineAssets: true,             // Add assets (CSS/JS) in HTML for portable report
+        saveJson: true,                 // Save the JSON along with HTML
+        overwrite: true,                // Overwrite existing reports
+        timestamp: true,                // Add timestamp to report
+        screenshotsDirectory: path.join(__dirname, '../cypress/screenshots'), // Path to screenshots
+        videosDirectory: path.join(__dirname, '../cypress/videos'),    // Path to videos
     })
 }
 
