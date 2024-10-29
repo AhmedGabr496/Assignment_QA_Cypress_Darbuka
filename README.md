@@ -11,7 +11,7 @@ This project contains automated tests for the Sauce Demo website using Cypress.
 
 1. Clone this repository:
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/AhmedGabr496/Assignment_QA_Cypress_Darbuka.git
    ```
 2. Navigate to the project directory:
    ```bash
