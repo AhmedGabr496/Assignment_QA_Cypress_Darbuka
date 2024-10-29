@@ -30,17 +30,21 @@ This project contains automated tests for the Sauce Demo website using Cypress.
 
 To open Cypress Test Runner (interactive mode):
 ```bash
+cd Assignment_QA_Cypress_Darbuka
 npm run cypress:open
 ```
 
 To run tests in headless mode:
 ```bash
+cd Assignment_QA_Cypress_Darbuka
 npm run cypress:run
 ```
 
 ### Run tests headlessly with report generation
 ```bash
+cd Assignment_QA_Cypress_Darbuka
 npm run test:with:report
+npm run generate:report
 ```
 
 This command will:
@@ -105,4 +109,4 @@ The test suite covers the following key functionality:
 - `npm run clean:reports` - Cleans previous reports
 - `npm run generate:report` - Generates HTML report from JSON results
 - `npm run test:with:report` - Runs full test suite with report generation
-```
+```   
